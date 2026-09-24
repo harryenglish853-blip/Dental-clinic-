@@ -103,6 +103,7 @@ const PHOTO_SLOTS = {
   general: { label: "Preventive care", alt: "Patient during a routine dental check-up", variant: "consult" },
   cosmetic: { label: "Natural, confident smile", alt: "Patient smiling naturally after cosmetic treatment", variant: "smile" },
   restorative: { label: "Restorative treatment", alt: "Dentist planning restorative treatment", variant: "tech" },
+  orthodontics: { label: "Orthodontic care", alt: "Patient during an orthodontic check-up", variant: "tech" },
   advanced: { label: "Advanced care", alt: "Modern dental equipment in a treatment room", variant: "room" },
   featured: { label: "Cosmetic dentistry", alt: "Close-up of a natural, healthy smile", variant: "smile" },
   technology: { label: "Digital dental technology", alt: "Close-up of modern dental imaging equipment", variant: "tech" },
@@ -124,7 +125,13 @@ function photo(key, { eager = false } = {}) {
     </div>`;
 }
 
-const photos = Object.fromEntries(Object.keys(PHOTO_SLOTS).map((k) => [k, photo(k, { eager: k === "hero" })]));
+const serviceIds = new Set((cfg.services || []).map((s) => s.id));
+const SERVICE_SLOTS = ["general", "cosmetic", "restorative", "orthodontics", "advanced"];
+const photos = Object.fromEntries(
+  Object.keys(PHOTO_SLOTS)
+    .filter((k) => !SERVICE_SLOTS.includes(k) || serviceIds.has(k))
+    .map((k) => [k, photo(k, { eager: k === "hero" })])
+);
 
 const services = cfg.services || [];
 
@@ -193,11 +200,17 @@ const statsHtml = (cfg.stats || [])
   .map((s) => `<div class="stat"><dt class="stat__label">${esc(s.label)}</dt><dd class="stat__value">${esc(s.value)}</dd></div>`)
   .join("");
 
+const to12h = (t) => {
+  const m = /^(\d{2}):(\d{2})$/.exec(t);
+  if (!m) return t;
+  const h = Number(m[1]);
+  return `${h % 12 || 12}:${m[2]} ${h < 12 ? "AM" : "PM"}`;
+};
 const hoursHtml = hours
   .map(
     (h) =>
       `<tr><th scope="row">${esc(h.days)}</th><td>${
-        has(h.open) && has(h.close) ? `${esc(h.open)} – ${esc(h.close)}` : has(h.open) ? esc(h.open) : "[Verify hours]"
+        has(h.open) && has(h.close) ? `${esc(to12h(h.open))} – ${esc(to12h(h.close))}` : has(h.open) ? esc(h.open) : "[Verify hours]"
       }</td></tr>`
   )
   .join("");
@@ -343,6 +356,7 @@ function jsonLd() {
         .filter((h) => has(h.open) && has(h.close) && /^\d{2}:\d{2}$/.test(h.open))
         .map((h) => ({ "@type": "OpeningHoursSpecification", dayOfWeek: h.days, opens: h.open, closes: h.close })),
     }),
+    ...(cfg.languages?.length && { knowsLanguage: cfg.languages }),
     ...(socials.length && { sameAs: socials.map(([, u]) => u) }),
     ...(ratingSet &&
       has(rating.count) && {
@@ -396,6 +410,7 @@ const ctx = {
   hoursSet,
   socialHtml,
   socialSet: socials.length > 0,
+  spanishSet: (cfg.languages || []).some((l) => /spanish|español/i.test(l)),
   ratingSet,
   ratingValue: rating.value,
   ratingSource: rating.source,
