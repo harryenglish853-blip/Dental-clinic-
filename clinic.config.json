@@ -1,0 +1,147 @@
+{
+  "_README": "Single source of truth for every clinic fact on the site. Leave a value empty (\"\") until it is VERIFIED — the build shows a clearly marked placeholder and prints a warning instead of inventing anything. Run `npm run build` after editing.",
+
+  "siteUrl": "",
+  "name": "",
+  "shortName": "",
+  "description": "Modern dentistry centered around comfort, precision, and personalized care.",
+
+  "address": {
+    "street": "",
+    "city": "",
+    "state": "",
+    "postalCode": "",
+    "country": "US"
+  },
+  "geo": { "latitude": "", "longitude": "" },
+
+  "phone": "",
+  "phoneE164": "",
+  "email": "",
+
+  "hours": [
+    { "days": "Monday", "open": "", "close": "" },
+    { "days": "Tuesday", "open": "", "close": "" },
+    { "days": "Wednesday", "open": "", "close": "" },
+    { "days": "Thursday", "open": "", "close": "" },
+    { "days": "Friday", "open": "", "close": "" },
+    { "days": "Saturday", "open": "", "close": "" },
+    { "days": "Sunday", "open": "", "close": "" }
+  ],
+
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "youtube": ""
+  },
+
+  "rating": { "value": "", "count": "", "source": "", "url": "" },
+  "reviewsUrl": "",
+  "bookingUrl": "",
+
+  "form": {
+    "_note": "provider: 'netlify' (Netlify Forms, works when deployed on Netlify) or 'endpoint' (any service that accepts a JSON POST, e.g. Formspree or your own HIPAA-compliant backend). See README → Appointment form.",
+    "provider": "netlify",
+    "endpoint": ""
+  },
+
+  "stats": [],
+
+  "photos": {
+    "_note": "Paths are relative to src/ (e.g. \"assets/img/hero.avif\"). Leave empty to show the art-directed placeholder.",
+    "hero": "",
+    "about": "",
+    "aboutDetail": "",
+    "general": "",
+    "cosmetic": "",
+    "restorative": "",
+    "advanced": "",
+    "featured": "",
+    "technology": "",
+    "dentist": "",
+    "finalCta": ""
+  },
+
+  "beforeAfter": [],
+
+  "dentist": {
+    "name": "",
+    "credentials": "",
+    "bio": "",
+    "education": "",
+    "memberships": "",
+    "interests": "",
+    "philosophy": ""
+  },
+
+  "team": [],
+
+  "reviews": [],
+
+  "payment": {
+    "insurance": "",
+    "methods": "",
+    "financing": "",
+    "membership": ""
+  },
+
+  "faq": {
+    "newPatients": "",
+    "insurance": "",
+    "emergency": "",
+    "financing": ""
+  },
+
+  "technology": [
+    { "name": "Digital X-rays", "text": "Detailed images that help your dentist see what the eye can't, with results available in moments.", "verified": false },
+    { "name": "Intraoral cameras", "text": "A tiny camera lets you see exactly what your dentist sees, so every recommendation is easy to understand.", "verified": false },
+    { "name": "3D imaging", "text": "Three-dimensional views support careful planning for implants and complex treatment.", "verified": false },
+    { "name": "Digital impressions", "text": "A quick optical scan can replace traditional impression material for many restorations.", "verified": false }
+  ],
+
+  "services": [
+    {
+      "id": "general",
+      "title": "General Dentistry",
+      "summary": "Preventive care that protects your smile for the long term.",
+      "items": [
+        { "name": "Dental Exams", "text": "A thorough look at your teeth, gums and overall oral health." },
+        { "name": "Professional Cleanings", "text": "Gentle removal of plaque and tartar that brushing can't reach." },
+        { "name": "Fillings", "text": "Tooth-colored restorations that repair decay and blend naturally." },
+        { "name": "Gum Care", "text": "Assessment and treatment to keep your gums healthy." }
+      ]
+    },
+    {
+      "id": "cosmetic",
+      "title": "Cosmetic Dentistry",
+      "summary": "Thoughtful enhancements that look natural and feel like you.",
+      "items": [
+        { "name": "Professional Whitening", "text": "A brighter smile with professionally guided whitening." },
+        { "name": "Veneers", "text": "Thin, custom-made shells that refine the shape and shade of teeth." },
+        { "name": "Smile Makeovers", "text": "A personalized plan combining treatments to reach your goals." },
+        { "name": "Cosmetic Bonding", "text": "Tooth-colored material that repairs chips and small gaps." }
+      ]
+    },
+    {
+      "id": "restorative",
+      "title": "Restorative Dentistry",
+      "summary": "Rebuild comfort, function and confidence in your smile.",
+      "items": [
+        { "name": "Crowns", "text": "Custom caps that protect and strengthen damaged teeth." },
+        { "name": "Bridges", "text": "A fixed option to replace one or more missing teeth." },
+        { "name": "Dental Implants", "text": "A long-term foundation for replacing missing teeth." },
+        { "name": "Dentures", "text": "Comfortable, natural-looking full or partial replacements." }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Care",
+      "summary": "Specialized treatment when you need it most.",
+      "items": [
+        { "name": "Clear Aligners", "text": "Discreet, removable aligners that gradually straighten teeth." },
+        { "name": "Root Canal Therapy", "text": "Treatment that relieves pain and saves an infected tooth." },
+        { "name": "Emergency Dentistry", "text": "Prompt care for dental pain, injuries and urgent problems." }
+      ]
+    }
+  ]
+}

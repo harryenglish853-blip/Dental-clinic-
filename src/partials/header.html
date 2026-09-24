@@ -1,0 +1,55 @@
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" data-header>
+  <div class="site-header__inner container">
+    <a class="logo" href="/" aria-label="{{name}} — home">
+      {{> logo}}
+      <span class="logo__text">{{shortName}}</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="/#top">Home</a></li>
+        <li><a class="nav__link" href="/#about">About</a></li>
+        <li><a class="nav__link" href="/#services">Services</a></li>
+        <li><a class="nav__link" href="/#dentists">Our Dentists</a></li>
+        <li><a class="nav__link" href="/#technology">Technology</a></li>
+        <li><a class="nav__link" href="/#reviews">Reviews</a></li>
+        <li><a class="nav__link" href="/#faq">FAQ</a></li>
+        <li><a class="nav__link" href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="call-link" href="{{phoneHref}}">
+        <span class="call-link__icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg></span>
+        <span class="call-link__text">Call Us</span>
+      </a>
+      <a class="btn btn--primary btn--sm site-header__cta" href="/#appointment">Book Appointment</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+        <span class="visually-hidden">Open menu</span>
+        <span class="menu-toggle__bars" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu" data-menu hidden>
+  <nav class="mobile-menu__inner container" aria-label="Mobile">
+    <ul class="mobile-menu__list">
+      <li><a href="/#top">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/#dentists">Our Dentists</a></li>
+      <li><a href="/#technology">Technology</a></li>
+      <li><a href="/#reviews">Reviews</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-menu__actions">
+      <a class="btn btn--primary btn--lg btn--block" href="/#appointment">Book Appointment</a>
+      <a class="btn btn--ghost btn--lg btn--block" href="{{phoneHref}}">
+        <svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg><span>Call {{phone}}</span>
+      </a>
+    </div>
+  </nav>
+</div>

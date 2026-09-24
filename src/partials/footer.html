@@ -1,0 +1,51 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo logo--light" href="/" aria-label="{{name}} — home">
+          {{> logo}}
+          <span class="logo__text">{{shortName}}</span>
+        </a>
+        <p>Personalized, comfort-focused dental care in {{cityState}} — from preventive visits to complete smile transformations.</p>
+        <!--if:socialSet--><ul class="socials" aria-label="Social media">{{{socialHtml}}}</ul><!--/if:socialSet-->
+      </div>
+
+      <nav class="site-footer__col" aria-labelledby="ft-nav">
+        <h2 class="site-footer__heading" id="ft-nav">Navigation</h2>
+        <ul>
+          <li><a href="/#top">Home</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/team.html">Our Team</a></li>
+          <li><a href="/#new-patients">Patient Information</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__col" aria-labelledby="ft-svc">
+        <h2 class="site-footer__heading" id="ft-svc">Services</h2>
+        <ul>{{{footerServicesHtml}}}</ul>
+      </nav>
+
+      <div class="site-footer__col">
+        <h2 class="site-footer__heading">Contact</h2>
+        <address>
+          <!--if:addressSet--><a href="{{directionsUrl}}" target="_blank" rel="noopener noreferrer">{{addressStreet}}<br>{{addressLocality}}</a><!--else:addressSet-->{{addressStreet}}<br>{{addressLocality}}<!--/if:addressSet--><br>
+          <a href="{{phoneHref}}">{{phone}}</a><br>
+          <a href="{{emailHref}}">{{email}}</a>
+        </address>
+        <p class="site-footer__hours"><a href="/#contact">Office hours</a></p>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© {{year}} {{name}}. All rights reserved.</p>
+      <ul class="site-footer__legal">
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+        <li><a href="/privacy.html#hipaa">HIPAA Notice</a></li>
+        <li><a href="/accessibility.html">Accessibility</a></li>
+        <li><a href="/terms.html">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

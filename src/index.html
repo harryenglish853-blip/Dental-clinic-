@@ -1,0 +1,544 @@
+<!--page {"title":"{{name}} | Dentist in {{cityState}}","description":"{{name}} is a modern dental clinic in {{cityState}} offering preventive, cosmetic, restorative and emergency dentistry with a focus on comfort and personalized care.","path":"/","priority":"1.0"}-->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+{{{jsonLd}}}
+</head>
+<body class="page-home">
+{{> header}}
+
+<main id="main">
+
+  <!-- ========================================================== HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <p class="eyebrow eyebrow--pill" data-reveal><span class="eyebrow__dot" aria-hidden="true"></span>Premium Dental Care</p>
+        <h1 class="hero__title" id="hero-title" data-reveal style="--d:80ms">
+          <span class="hero__line">Confident smiles.</span>
+          <span class="hero__line text-gradient">Exceptional care.</span>
+        </h1>
+        <p class="hero__lead" data-reveal style="--d:160ms">Experience modern dentistry centered around comfort, precision, and personalized care — right here in {{cityState}}.</p>
+        <div class="hero__actions" data-reveal style="--d:240ms">
+          <a class="btn btn--primary btn--lg" href="#appointment">
+            <span>Book Your Appointment</span>
+            <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+          </a>
+          <a class="btn btn--ghost btn--lg" href="#services">Explore Our Services</a>
+        </div>
+        <ul class="hero__trust" data-reveal style="--d:320ms">
+          <!--if:ratingSet-->
+          <li class="hero__trust-item hero__trust-item--rating">{{{ratingStars}}}<span>{{ratingValue}} rating on {{ratingSource}}</span></li>
+          <!--else:ratingSet-->
+          <li class="hero__trust-item"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#heart"></use></svg><span>Comfort-Focused Care</span></li>
+          <!--/if:ratingSet-->
+          <li class="hero__trust-item"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#scan"></use></svg><span>Modern Technology</span></li>
+          <li class="hero__trust-item"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#users"></use></svg><span>Experienced Team</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual" data-reveal="mask" style="--d:120ms">
+        <div class="hero__media media media--tall" data-parallax="0.06">
+          {{{photo.hero}}}
+        </div>
+        <div class="float-card float-card--a" aria-hidden="true">
+          <!--if:ratingSet-->
+          <div>
+            {{{ratingStars}}}
+            <p class="float-card__title">Exceptional patient experience</p>
+            <p class="float-card__meta">{{ratingValue}} on {{ratingSource}}</p>
+          </div>
+          <!--else:ratingSet-->
+          <span class="icon-tile icon-tile--sm"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#leaf"></use></svg></span>
+          <div>
+            <p class="float-card__title">Calm, unhurried visits</p>
+            <p class="float-card__meta">Designed around your comfort</p>
+          </div>
+          <!--/if:ratingSet-->
+        </div>
+        <div class="float-card float-card--b" aria-hidden="true">
+          <span class="float-card__pulse"></span>
+          <p class="float-card__title">Modern Digital Dentistry</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================== TRUST STRIP -->
+  <section class="trust" aria-label="Why patients choose us">
+    <div class="container">
+      <ul class="trust__list">
+        <!--if:ratingSet-->
+        <li class="trust__item" data-reveal><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#star"></use></svg><span>{{ratingValue}}★ Patient Reviews</span></li>
+        <!--else:ratingSet-->
+        <li class="trust__item" data-reveal><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chat"></use></svg><span>Patient-First Approach</span></li>
+        <!--/if:ratingSet-->
+        <li class="trust__item" data-reveal style="--d:60ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#users"></use></svg><span>Experienced Dental Team</span></li>
+        <li class="trust__item" data-reveal style="--d:120ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#scan"></use></svg><span>Modern Technology</span></li>
+        <li class="trust__item" data-reveal style="--d:180ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#compass"></use></svg><span>Personalized Treatment</span></li>
+        <li class="trust__item" data-reveal style="--d:240ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#leaf"></use></svg><span>Comfort-Focused Care</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ========================================================= ABOUT -->
+  <section class="section about" id="about" aria-labelledby="about-title">
+    <div class="container about__grid">
+      <div class="about__visual">
+        <div class="about__media media media--portrait" data-reveal="mask" data-parallax="0.04">{{{photo.about}}}</div>
+        <div class="about__detail media" data-reveal="mask" style="--d:200ms">{{{photo.aboutDetail}}}</div>
+      </div>
+      <div class="about__content">
+        <p class="eyebrow" data-reveal>Welcome to {{name}}</p>
+        <h2 class="h2" id="about-title" data-reveal style="--d:60ms">Dentistry designed around you.</h2>
+        <p class="lead" data-reveal style="--d:120ms">We believe great dentistry starts with listening. As a modern dental clinic in {{city}}, we combine careful, unhurried care with advanced technology to help you keep a healthy, confident smile for life.</p>
+        <ul class="pillars">
+          <li class="pillar" data-reveal style="--d:140ms"><span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#compass"></use></svg></span><div><h3>Personalized treatment</h3><p>Plans built around your goals, schedule and budget.</p></div></li>
+          <li class="pillar" data-reveal style="--d:200ms"><span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#leaf"></use></svg></span><div><h3>A comfortable experience</h3><p>A calm setting and a gentle, reassuring approach.</p></div></li>
+          <li class="pillar" data-reveal style="--d:260ms"><span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#shield"></use></svg></span><div><h3>Preventive first</h3><p>Protecting healthy teeth before problems begin.</p></div></li>
+          <li class="pillar" data-reveal style="--d:320ms"><span class="pillar__icon"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#heart"></use></svg></span><div><h3>Long-term oral health</h3><p>Care that looks beyond today's appointment.</p></div></li>
+        </ul>
+        <!--if:statsSet--><dl class="stats" data-reveal>{{{statsHtml}}}</dl><!--/if:statsSet-->
+        <a class="btn btn--outline" href="#dentists" data-reveal>
+          <span>Meet Our Team</span>
+          <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== SERVICES -->
+  <section class="section services" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section-head section-head--split">
+        <div>
+          <p class="eyebrow" data-reveal>Our services</p>
+          <h2 class="h2" id="services-title" data-reveal style="--d:60ms">Complete care for every smile</h2>
+        </div>
+        <p class="lead" data-reveal style="--d:120ms">From preventive care to complete smile transformations, discover personalized dental care for every stage of life — with general, cosmetic and emergency dentistry in {{city}}.</p>
+      </header>
+      <ul class="svc-grid">{{{servicesHtml}}}</ul>
+    </div>
+  </section>
+
+  <!-- ============================================ FEATURED TREATMENT -->
+  <section class="section section--tight featured" aria-labelledby="featured-title">
+    <div class="container">
+      <div class="featured__panel">
+        <div class="featured__media media" data-reveal="mask" data-parallax="0.05">{{{photo.featured}}}</div>
+        <div class="featured__content">
+          <p class="eyebrow eyebrow--light" data-reveal>Cosmetic dentistry</p>
+          <h2 class="h2 featured__title" id="featured-title" data-reveal style="--d:60ms">Transform your smile</h2>
+          <p class="featured__lead" data-reveal style="--d:120ms">Subtle refinements or a complete makeover — every cosmetic plan is designed to look natural, feel comfortable and suit your face.</p>
+          <ul class="featured__list">
+            <li data-reveal style="--d:160ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#sparkle"></use></svg>Professional Teeth Whitening</li>
+            <li data-reveal style="--d:220ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#layers"></use></svg>Veneers</li>
+            <li data-reveal style="--d:280ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#scan"></use></svg>Clear Aligners</li>
+            <li data-reveal style="--d:340ms"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#heart"></use></svg>Smile Makeovers</li>
+          </ul>
+          <button class="btn btn--light" type="button" data-dialog-open="svc-cosmetic" aria-haspopup="dialog" data-reveal>
+            <span>Explore Cosmetic Dentistry</span>
+            <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================= BEFORE / AFTER -->
+  <section class="section results" id="results" aria-labelledby="results-title">
+    <div class="container results__grid">
+      <div class="results__content">
+        <p class="eyebrow" data-reveal>Smile gallery</p>
+        <h2 class="h2" id="results-title" data-reveal style="--d:60ms">Real smiles. Real confidence.</h2>
+        <p class="lead" data-reveal style="--d:120ms">Drag the handle to compare. Every result we share is a genuine patient outcome, published only with the patient's written consent.</p>
+        <p class="fine-print" data-reveal style="--d:180ms"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#lock"></use></svg>Photos are shared with written patient consent. Identifying details are removed. Individual results vary.</p>
+      </div>
+      <div class="ba" data-ba data-reveal="mask">
+        <div class="ba__stage" style="--pos:50%">
+          {{{beforeAfterHtml}}}
+          <span class="ba__label ba__label--before" aria-hidden="true">Before</span>
+          <span class="ba__label ba__label--after" aria-hidden="true">After</span>
+          <div class="ba__handle" aria-hidden="true"><span class="ba__knob"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"></use></svg><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></span></div>
+          <label class="visually-hidden" for="ba-range">Compare before and after — percentage of before image shown</label>
+          <input class="ba__range" id="ba-range" type="range" min="0" max="100" value="50" step="1" data-ba-range>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== WHY US -->
+  <section class="section why" aria-labelledby="why-title">
+    <div class="container">
+      <header class="section-head section-head--center">
+        <p class="eyebrow" data-reveal>Why choose us</p>
+        <h2 class="h2" id="why-title" data-reveal style="--d:60ms">A better dental experience</h2>
+      </header>
+      <ul class="why__grid">
+        <li class="why-card" data-reveal><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#heart"></use></svg></span><h3>Patient-first care</h3><p>Every treatment begins by understanding your goals, questions and concerns.</p></li>
+        <li class="why-card" data-reveal style="--d:70ms"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#scan"></use></svg></span><h3>Modern technology</h3><p>Digital tools support precise diagnosis and carefully planned treatment.</p></li>
+        <li class="why-card" data-reveal style="--d:140ms"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#leaf"></use></svg></span><h3>Comfortable environment</h3><p>A calming space designed to ease the anxiety many people feel about the dentist.</p></li>
+        <li class="why-card" data-reveal style="--d:210ms"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#compass"></use></svg></span><h3>Personalized treatment</h3><p>No one-size-fits-all plans — just care designed around your individual needs.</p></li>
+        <li class="why-card" data-reveal style="--d:280ms"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#chat"></use></svg></span><h3>Transparent communication</h3><p>You'll understand your options and costs before making any decision.</p></li>
+        <li class="why-card" data-reveal style="--d:350ms"><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#layers"></use></svg></span><h3>Comprehensive care</h3><p>Many areas of dental care, delivered by one trusted team.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================================================== TECHNOLOGY -->
+  <section class="section tech" id="technology" aria-labelledby="tech-title">
+    <div class="container tech__grid">
+      <div class="tech__intro">
+        <p class="eyebrow" data-reveal>Technology</p>
+        <h2 class="h2" id="tech-title" data-reveal style="--d:60ms">Modern dentistry.<br><span class="text-gradient">Greater precision.</span></h2>
+        <p class="lead" data-reveal style="--d:120ms">Thoughtfully chosen technology helps us see more, explain more clearly and plan treatment with confidence — so your visits are more comfortable and more predictable.</p>
+        <div class="tech__media media" data-reveal="mask" data-parallax="0.05">{{{photo.technology}}}</div>
+      </div>
+      <ol class="tech__list">{{{techHtml}}}</ol>
+    </div>
+  </section>
+
+  <!-- ==================================================== DENTIST -->
+  <section class="section dentist" id="dentists" aria-labelledby="dentist-title">
+    <div class="container dentist__grid">
+      <div class="dentist__media media media--portrait" data-reveal="mask">{{{photo.dentist}}}</div>
+      <div class="dentist__content">
+        <p class="eyebrow" data-reveal>Meet your dentist</p>
+        <h2 class="h2" id="dentist-title" data-reveal style="--d:60ms">{{dentist.name}}<span class="dentist__cred">{{dentist.credentials}}</span></h2>
+        <p class="lead" data-reveal style="--d:120ms">{{dentist.bio}}</p>
+        <blockquote class="dentist__quote" data-reveal style="--d:160ms"><p>{{dentist.philosophy}}</p></blockquote>
+        <dl class="dentist__facts" data-reveal style="--d:200ms">
+          <div><dt>Education</dt><dd>{{dentist.education}}</dd></div>
+          <div><dt>Professional memberships</dt><dd>{{dentist.memberships}}</dd></div>
+          <div><dt>Special interests</dt><dd>{{dentist.interests}}</dd></div>
+        </dl>
+        <a class="btn btn--outline" href="/team.html" data-reveal>
+          <span>Meet the Full Team</span>
+          <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== REVIEWS -->
+  <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="container">
+      <header class="section-head section-head--center">
+        <p class="eyebrow" data-reveal>Patient reviews</p>
+        <h2 class="h2" id="reviews-title" data-reveal style="--d:60ms">What our patients say</h2>
+      </header>
+      <div class="carousel" data-carousel aria-roledescription="carousel" aria-label="Patient reviews" data-reveal>
+        <div class="carousel__viewport">
+          <ul class="carousel__track" data-carousel-track>{{{reviewsHtml}}}</ul>
+        </div>
+        <div class="carousel__controls">
+          <button class="icon-btn" type="button" data-carousel-prev aria-label="Previous review"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-left"></use></svg></button>
+          <div class="carousel__dots" data-carousel-dots></div>
+          <button class="icon-btn" type="button" data-carousel-next aria-label="Next review"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" data-carousel-status></p>
+      </div>
+      <!--if:reviewsSet-->
+      <div class="reviews__more" data-reveal>
+        <a class="btn btn--outline" href="{{reviewsUrl}}" target="_blank" rel="noopener noreferrer">
+          <span>Read More Reviews</span>
+          <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-up-right"></use></svg>
+          <span class="visually-hidden">(opens in a new tab)</span>
+        </a>
+      </div>
+      <!--/if:reviewsSet-->
+    </div>
+  </section>
+
+  <!-- ================================================ NEW PATIENTS -->
+  <section class="section steps" id="new-patients" aria-labelledby="steps-title">
+    <div class="container">
+      <header class="section-head section-head--center">
+        <p class="eyebrow" data-reveal>New patients</p>
+        <h2 class="h2" id="steps-title" data-reveal style="--d:60ms">Becoming a patient is simple</h2>
+        <p class="lead" data-reveal style="--d:120ms">No pressure, no surprises. Just a relaxed first visit and a clear plan.</p>
+      </header>
+      <ol class="steps__list">
+        <li class="step" data-reveal><span class="step__num">01</span><h3>Book your visit</h3><p>Choose a time that suits you — request online or give us a call.</p></li>
+        <li class="step" data-reveal style="--d:120ms"><span class="step__num">02</span><h3>Meet your dental team</h3><p>Talk through your concerns, goals and oral health in a relaxed setting.</p></li>
+        <li class="step" data-reveal style="--d:240ms"><span class="step__num">03</span><h3>Receive your personalized plan</h3><p>Understand your recommended treatment, options and next steps.</p></li>
+      </ol>
+      <div class="steps__cta" data-reveal>
+        <a class="btn btn--primary btn--lg" href="#appointment">
+          <span>Book Your First Visit</span>
+          <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== PAYMENT -->
+  <section class="section payment" id="payment" aria-labelledby="payment-title">
+    <div class="container payment__grid">
+      <div class="payment__intro">
+        <p class="eyebrow" data-reveal>Insurance &amp; payment</p>
+        <h2 class="h2" id="payment-title" data-reveal style="--d:60ms">Quality care made simple</h2>
+        <p class="lead" data-reveal style="--d:120ms">We'll help you understand your coverage and costs before treatment begins, so you can make decisions with confidence.</p>
+        <a class="btn btn--outline" href="#faq-insurance" data-faq-link data-reveal>
+          <span>View Payment Options</span>
+          <svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg>
+        </a>
+      </div>
+      <ul class="payment__cards">{{{paymentCards}}}</ul>
+    </div>
+  </section>
+
+  <!-- ======================================================== FAQ -->
+  <section class="section faq" id="faq" aria-labelledby="faq-title">
+    <div class="container faq__grid">
+      <header class="faq__head">
+        <p class="eyebrow" data-reveal>FAQ</p>
+        <h2 class="h2" id="faq-title" data-reveal style="--d:60ms">Questions, answered</h2>
+        <p class="lead" data-reveal style="--d:120ms">Can't find what you're looking for? Our team is happy to help.</p>
+        <a class="text-link" href="{{phoneHref}}" data-reveal>Call {{phone}}<svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a>
+      </header>
+      <div class="accordion" data-accordion>
+        <div class="acc-item" id="faq-new">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-new-panel" id="faq-new-btn">Do you accept new patients?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-new-panel" role="region" aria-labelledby="faq-new-btn"><div class="acc-item__inner">{{{faq.newPatients}}}</div></div>
+        </div>
+        <div class="acc-item" id="faq-insurance">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-insurance-panel" id="faq-insurance-btn">What insurance plans do you accept?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-insurance-panel" role="region" aria-labelledby="faq-insurance-btn"><div class="acc-item__inner">{{{faq.insurance}}}<p>Please bring your insurance card to your visit, and feel free to <a href="#appointment" data-reason="Insurance or payment question">send us a question</a> beforehand.</p></div></div>
+        </div>
+        <div class="acc-item" id="faq-bring">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-bring-panel" id="faq-bring-btn">What should I bring to my first appointment?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-bring-panel" role="region" aria-labelledby="faq-bring-btn"><div class="acc-item__inner"><p>Bring a photo ID, your dental insurance card (if you have one), a list of any medications you take, and any recent dental X-rays or records if they're available. It also helps to note any questions you'd like to ask.</p></div></div>
+        </div>
+        <div class="acc-item" id="faq-emergency">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-emergency-panel" id="faq-emergency-btn">Do you offer emergency dental appointments?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-emergency-panel" role="region" aria-labelledby="faq-emergency-btn"><div class="acc-item__inner">{{{faq.emergency}}}<p>If you're in pain, please <a href="{{phoneHref}}">call us</a> rather than using the online form.</p></div></div>
+        </div>
+        <div class="acc-item" id="faq-cleaning">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-cleaning-panel" id="faq-cleaning-btn">How often should I have a dental cleaning?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-cleaning-panel" role="region" aria-labelledby="faq-cleaning-btn"><div class="acc-item__inner"><p>Many people benefit from a check-up and professional cleaning about twice a year. Your dentist may recommend a different schedule based on your oral health, gum health and risk factors.</p></div></div>
+        </div>
+        <div class="acc-item" id="faq-cosmetic">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-cosmetic-panel" id="faq-cosmetic-btn">Do you offer cosmetic dentistry?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-cosmetic-panel" role="region" aria-labelledby="faq-cosmetic-btn"><div class="acc-item__inner"><p>Yes — see our <button class="text-link text-link--inline" type="button" data-dialog-open="svc-cosmetic" aria-haspopup="dialog">cosmetic dentistry services</button>. A consultation is the best way to discuss what's right for your smile.</p></div></div>
+        </div>
+        <div class="acc-item" id="faq-financing">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-financing-panel" id="faq-financing-btn">Do you offer financing?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-financing-panel" role="region" aria-labelledby="faq-financing-btn"><div class="acc-item__inner">{{{faq.financing}}}</div></div>
+        </div>
+        <div class="acc-item" id="faq-first">
+          <h3><button class="acc-item__btn" type="button" aria-expanded="false" aria-controls="faq-first-panel" id="faq-first-btn">What should I expect during my first visit?<span class="acc-item__icon" aria-hidden="true"></span></button></h3>
+          <div class="acc-item__panel" id="faq-first-panel" role="region" aria-labelledby="faq-first-btn"><div class="acc-item__inner"><p>Your first visit usually includes a conversation about your health history and goals, a thorough examination and any necessary X-rays. Your dentist will then explain what they found and talk you through your options — there's never any pressure to decide on the spot.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== EMERGENCY -->
+  <section class="section section--tight emergency" id="emergency" aria-labelledby="emergency-title">
+    <div class="container">
+      <div class="emergency__panel" data-reveal>
+        <div class="emergency__icon" aria-hidden="true"><span class="emergency__pulse"></span><svg class="icon icon--lg"><use href="/assets/img/icons.svg#alert"></use></svg></div>
+        <div class="emergency__content">
+          <h2 class="h3" id="emergency-title">Dental emergency?</h2>
+          <p>If you're experiencing dental pain or an urgent dental problem, contact our office — we'll help you get the care you need as quickly as possible.</p>
+          <p class="emergency__note">If you have facial swelling that affects your breathing or swallowing, or uncontrolled bleeding, call 911 or go to the nearest emergency room.</p>
+        </div>
+        <div class="emergency__actions">
+          <a class="btn btn--primary" href="{{phoneHref}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg><span>Call Now</span></a>
+          <button class="btn btn--ghost" type="button" data-dialog-open="svc-advanced" aria-haspopup="dialog">Learn About Emergency Care</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================================================== CONTACT -->
+  <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <header class="section-head">
+        <p class="eyebrow" data-reveal>Visit us</p>
+        <h2 class="h2" id="contact-title" data-reveal style="--d:60ms">Your dentist in {{city}}</h2>
+      </header>
+      <div class="contact__grid">
+        <div class="contact__card" data-reveal>
+          <h3 class="contact__name">{{name}}</h3>
+          <ul class="contact__list">
+            <li><span class="icon-tile icon-tile--sm"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pin"></use></svg></span><address>{{addressStreet}}<br>{{addressLocality}}</address></li>
+            <li><span class="icon-tile icon-tile--sm"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg></span><a href="{{phoneHref}}">{{phone}}</a></li>
+            <li><span class="icon-tile icon-tile--sm"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#mail"></use></svg></span><a href="{{emailHref}}">{{email}}</a></li>
+          </ul>
+          <div class="hours">
+            <h4 class="hours__title"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#clock"></use></svg>Office hours</h4>
+            <table class="hours__table"><caption class="visually-hidden">Office hours</caption><tbody>{{{hoursHtml}}}</tbody></table>
+          </div>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="{{phoneHref}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg><span>Call Clinic</span></a>
+            <!--if:addressSet-->
+            <a class="btn btn--ghost" href="{{directionsUrl}}" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#pin"></use></svg><span>Get Directions</span><span class="visually-hidden">(opens Google Maps in a new tab)</span></a>
+            <!--/if:addressSet-->
+          </div>
+        </div>
+        <div class="contact__map" data-reveal="mask">
+          <!--if:addressSet-->
+          <div class="map" data-map data-src="{{mapEmbedUrl}}">
+            <button class="map__load" type="button" data-map-load>
+              <svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#pin"></use></svg>
+              <span>Show interactive map</span>
+              <small>Loads Google Maps</small>
+            </button>
+          </div>
+          <!--else:addressSet-->
+          <div class="map map--placeholder" role="img" aria-label="Map placeholder — add the verified clinic address in clinic.config.json">
+            <div class="map__pin"><svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#pin"></use></svg></div>
+            <p>[Interactive map appears once the verified clinic address is added]</p>
+          </div>
+          <!--/if:addressSet-->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================ APPOINTMENT -->
+  <section class="section appointment" id="appointment" aria-labelledby="appt-title">
+    <div class="container appointment__grid">
+      <aside class="appointment__aside">
+        <p class="eyebrow" data-reveal>Appointments</p>
+        <h2 class="h2" id="appt-title" data-reveal style="--d:60ms">Request an appointment</h2>
+        <p class="lead" data-reveal style="--d:120ms">Tell us a little about what you need and when suits you. Our team will contact you to confirm a time.</p>
+        <ol class="appointment__next" data-reveal style="--d:180ms">
+          <li><span>1</span>Send your request — it takes about a minute.</li>
+          <li><span>2</span>We'll contact you to confirm availability.</li>
+          <li><span>3</span>Your appointment is booked once we confirm it with you.</li>
+        </ol>
+        <!--if:bookingSet-->
+        <p class="appointment__alt" data-reveal>Prefer to choose a time yourself? <a class="text-link" href="{{bookingUrl}}" target="_blank" rel="noopener noreferrer">Book online<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+        <!--/if:bookingSet-->
+        <p class="appointment__alt" data-reveal>In pain or need help right away? <a class="text-link" href="{{phoneHref}}">Call {{phone}}</a></p>
+      </aside>
+
+      <div class="form-card" data-reveal>
+        <form class="appt-form" name="appointment" {{{formAttrs}}} novalidate data-appt-form>
+          <input type="hidden" name="form-name" value="appointment">
+          <input type="hidden" name="_started" value="" data-started>
+          <div class="hp" aria-hidden="true">
+            <label for="f-company">Company (leave this field empty)</label>
+            <input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-alert form-alert--error" role="alert" data-form-error hidden></div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-first">First name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-first" name="firstName" type="text" autocomplete="given-name" required maxlength="80" aria-describedby="f-first-err">
+              <p class="field__error" id="f-first-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-last">Last name <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-last" name="lastName" type="text" autocomplete="family-name" required maxlength="80" aria-describedby="f-last-err">
+              <p class="field__error" id="f-last-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="30" aria-describedby="f-phone-err">
+              <p class="field__error" id="f-phone-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="f-email-err">
+              <p class="field__error" id="f-email-err"></p>
+            </div>
+
+            <fieldset class="field field--full field--choice">
+              <legend>Are you a new or existing patient? <span class="req" aria-hidden="true">*</span></legend>
+              <div class="choice-row">
+                <label class="choice"><input type="radio" name="patientType" value="New patient" required aria-describedby="f-type-err"><span>New patient</span></label>
+                <label class="choice"><input type="radio" name="patientType" value="Existing patient"><span>Existing patient</span></label>
+              </div>
+              <p class="field__error" id="f-type-err"></p>
+            </fieldset>
+
+            <div class="field">
+              <label for="f-date">Preferred date <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-date" name="preferredDate" type="date" required aria-describedby="f-date-hint f-date-err" data-min-today>
+              <p class="field__hint" id="f-date-hint">We'll confirm the closest available time.</p>
+              <p class="field__error" id="f-date-err"></p>
+            </div>
+            <div class="field">
+              <label for="f-time">Preferred time <span class="req" aria-hidden="true">*</span></label>
+              <div class="select">
+                <select id="f-time" name="preferredTime" required aria-describedby="f-time-err">
+                  <option value="">Select a time</option>
+                  <option>Morning</option>
+                  <option>Midday</option>
+                  <option>Afternoon</option>
+                  <option>No preference</option>
+                </select>
+              </div>
+              <p class="field__error" id="f-time-err"></p>
+            </div>
+
+            <div class="field field--full">
+              <label for="f-reason">Reason for visit <span class="req" aria-hidden="true">*</span></label>
+              <div class="select">
+                <select id="f-reason" name="reason" required aria-describedby="f-reason-err">
+                  <option value="">Select a reason</option>
+                  {{{reasonOptionsHtml}}}
+                </select>
+              </div>
+              <p class="field__error" id="f-reason-err"></p>
+            </div>
+
+            <div class="field field--full">
+              <label for="f-message">Message <span class="optional">(optional)</span></label>
+              <textarea id="f-message" name="message" rows="4" maxlength="1000" aria-describedby="f-message-hint"></textarea>
+              <p class="field__hint" id="f-message-hint"><svg class="icon icon--sm" aria-hidden="true"><use href="/assets/img/icons.svg#lock"></use></svg>Please don't include detailed medical history or insurance numbers here — we'll collect that securely at your visit.</p>
+            </div>
+
+            <div class="field field--full">
+              <label class="check">
+                <input type="checkbox" name="consent" value="yes" required aria-describedby="f-consent-err">
+                <span>I agree to be contacted by phone or email regarding my appointment request. See our <a href="/privacy.html">Privacy Policy</a>.</span>
+              </label>
+              <p class="field__error" id="f-consent-err"></p>
+            </div>
+          </div>
+
+          <button class="btn btn--primary btn--lg btn--block appt-form__submit" type="submit" data-submit>
+            <span class="btn__label">Request Appointment</span>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+          <p class="appt-form__legal">Submitting this form is a request only — it does not confirm an appointment.</p>
+        </form>
+
+        <div class="form-success" data-form-success tabindex="-1" hidden>
+          <span class="form-success__icon"><svg class="icon icon--lg" aria-hidden="true"><use href="/assets/img/icons.svg#check"></use></svg></span>
+          <h3>Request received</h3>
+          <p>Thank you. Your appointment request has been received. Our team will contact you to confirm availability.</p>
+          <a class="btn btn--ghost" href="{{phoneHref}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg><span>Need us sooner? Call {{phone}}</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== FINAL CTA -->
+  <section class="final-cta" aria-labelledby="final-title">
+    <div class="final-cta__bg" aria-hidden="true" data-parallax="0.08">{{{photo.finalCta}}}</div>
+    <div class="container final-cta__content">
+      <h2 class="final-cta__title" id="final-title" data-reveal>Your healthier, more confident smile starts here.</h2>
+      <p class="final-cta__lead" data-reveal style="--d:80ms">Experience personalized dental care in a comfortable, modern environment.</p>
+      <div class="final-cta__actions" data-reveal style="--d:160ms">
+        <a class="btn btn--light btn--lg" href="#appointment"><span>Book an Appointment</span><svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a>
+        <a class="btn btn--glass btn--lg" href="{{phoneHref}}"><svg class="icon" aria-hidden="true"><use href="/assets/img/icons.svg#phone"></use></svg><span>Call Our Office</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{{> footer}}
+{{> mobile-bar}}
+{{{serviceDialogsHtml}}}
+</body>
+</html>

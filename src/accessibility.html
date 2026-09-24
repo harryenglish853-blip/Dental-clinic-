@@ -1,0 +1,40 @@
+<!--page {"title":"Accessibility | {{name}}","description":"Our commitment to making the {{name}} website accessible to everyone.","path":"/accessibility.html","priority":"0.3"}-->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body class="page-inner">
+{{> header}}
+<main id="main">
+  <section class="page-hero page-hero--compact" aria-labelledby="page-title">
+    <div class="container container--narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Accessibility</li></ol></nav>
+      <h1 class="h1" id="page-title">Accessibility statement</h1>
+    </div>
+  </section>
+  <section class="section section--flush-top">
+    <div class="container container--narrow prose">
+      <p>{{name}} is committed to making our website usable by as many people as possible, including people who use assistive technologies.</p>
+      <h2>Our approach</h2>
+      <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA. This site is built with:</p>
+      <ul>
+        <li>Semantic HTML and a logical heading structure</li>
+        <li>Full keyboard navigation with visible focus indicators</li>
+        <li>Labelled form fields with clear error messages</li>
+        <li>Text and interface colors chosen for sufficient contrast</li>
+        <li>Reduced motion for visitors who prefer it in their system settings</li>
+        <li>Large, easy-to-tap buttons on mobile devices</li>
+      </ul>
+      <h2>Need help?</h2>
+      <p>If you have difficulty using any part of this website, or need information in a different format, please contact us and we'll be glad to help — you can always book by phone.</p>
+      <p><a href="{{phoneHref}}">{{phone}}</a> · <a href="{{emailHref}}">{{email}}</a></p>
+      <h2>Visiting the clinic</h2>
+      <p>[Describe verified physical accessibility details — step-free access, parking, restrooms — or remove this section.]</p>
+    </div>
+  </section>
+</main>
+{{> footer}}
+{{> mobile-bar}}
+</body>
+</html>

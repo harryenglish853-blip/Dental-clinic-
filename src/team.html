@@ -1,0 +1,30 @@
+<!--page {"title":"Our Dental Team | {{name}}, {{cityState}}","description":"Meet the dentists and team at {{name}} in {{cityState}} — experienced, caring professionals focused on your comfort.","path":"/team.html","priority":"0.7"}-->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body class="page-inner">
+{{> header}}
+<main id="main">
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Our Team</li></ol></nav>
+      <p class="eyebrow" data-reveal>Our team</p>
+      <h1 class="h1" id="page-title" data-reveal style="--d:60ms">The people behind your care</h1>
+      <p class="lead" data-reveal style="--d:120ms">A friendly, experienced team dedicated to making every visit comfortable, clear and personal.</p>
+    </div>
+  </section>
+  <section class="section section--flush-top">
+    <div class="container">
+      <ul class="team-grid">{{{teamHtml}}}</ul>
+      <div class="steps__cta" data-reveal>
+        <a class="btn btn--primary btn--lg" href="/#appointment"><span>Book an Appointment</span><svg class="icon btn__icon" aria-hidden="true"><use href="/assets/img/icons.svg#arrow-right"></use></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+{{> mobile-bar}}
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!--page {"title":"Terms of Use | {{name}}","description":"Terms of use for the {{name}} website.","path":"/terms.html","priority":"0.2"}-->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body class="page-inner">
+{{> header}}
+<main id="main">
+  <section class="page-hero page-hero--compact" aria-labelledby="page-title">
+    <div class="container container--narrow">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Terms of Use</li></ol></nav>
+      <h1 class="h1" id="page-title">Terms of use</h1>
+    </div>
+  </section>
+  <section class="section section--flush-top">
+    <div class="container container--narrow prose">
+      <div class="notice"><strong>Template notice:</strong> [REPLACE WITH TERMS REVIEWED BY THE CLINIC'S LEGAL ADVISOR.]</div>
+      <h2>General information only</h2>
+      <p>The content on this website is for general information and is not a substitute for professional dental or medical advice, diagnosis or treatment. Always seek the advice of a qualified dentist about your individual situation.</p>
+      <h2>Appointment requests</h2>
+      <p>Submitting an appointment request through this website does not create a dentist–patient relationship and does not confirm an appointment. Your appointment is confirmed only when our team contacts you.</p>
+      <h2>Emergencies</h2>
+      <p>Do not use this website for urgent or emergency needs. Please call our office, or call 911 in a medical emergency.</p>
+      <h2>Patient results</h2>
+      <p>Treatment outcomes shown on this website are genuine patient results shared with consent. Individual results vary.</p>
+      <h2>Contact</h2>
+      <p>{{name}} · <a href="{{phoneHref}}">{{phone}}</a> · <a href="{{emailHref}}">{{email}}</a></p>
+    </div>
+  </section>
+</main>
+{{> footer}}
+{{> mobile-bar}}
+</body>
+</html>

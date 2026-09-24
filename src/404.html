@@ -1,0 +1,25 @@
+<!--page {"title":"Page not found | {{name}}","description":"The page you're looking for couldn't be found.","path":"/404.html","noindex":true}-->
+<!doctype html>
+<html lang="en">
+<head>
+{{> head}}
+</head>
+<body class="page-inner">
+{{> header}}
+<main id="main">
+  <section class="page-hero page-hero--center" aria-labelledby="page-title">
+    <div class="container container--narrow">
+      <p class="eyebrow">Error 404</p>
+      <h1 class="h1" id="page-title">We couldn't find that page</h1>
+      <p class="lead">The link may be out of date. Let's get you back on track.</p>
+      <div class="hero__actions hero__actions--center">
+        <a class="btn btn--primary btn--lg" href="/">Back to Home</a>
+        <a class="btn btn--ghost btn--lg" href="/#appointment">Book an Appointment</a>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+{{> mobile-bar}}
+</body>
+</html>

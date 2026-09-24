@@ -1,0 +1,14 @@
+{
+  "name": "dental-clinic-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium, accessible, fast dental clinic website. Static HTML/CSS/JS with a zero-dependency build.",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node build.mjs",
+    "build:strict": "node build.mjs --strict",
+    "dev": "node build.mjs && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs"
+  }
+}
