@@ -4,11 +4,14 @@
   "private": true,
   "description": "Premium, accessible, fast dental clinic website. Static HTML/CSS/JS with a zero-dependency build.",
   "type": "module",
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "node build.mjs",
     "build:strict": "node build.mjs --strict",
     "dev": "node build.mjs && node scripts/serve.mjs",
-    "serve": "node scripts/serve.mjs"
+    "serve": "node scripts/serve.mjs",
+    "preview": "node build.mjs && node scripts/preview.mjs"
   }
 }
