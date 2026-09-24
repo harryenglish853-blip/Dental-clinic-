@@ -66,7 +66,7 @@ src/assets/js/main.js  nav, reveal/parallax motion, dialogs, accordion,
   - labelled form fields with ARIA error messages, AA-contrast colors, and touch targets of 44px or more
   - `prefers-reduced-motion` support
 - **Performance:**
-  - one CSS file and one deferred JS file (together about 60 KB, before compression), no framework
+  - one CSS file and one deferred JS file (together about 90 KB uncompressed, much smaller gzipped), no framework
   - fonts load with `display=swap`, and Google Maps loads only when the visitor asks for it
   - placeholder art is pure CSS, and real images lazy-load
 - **Responsive:** tested at 320, 375, 390, 430, 768, 1024, 1440 and 1920px with no horizontal overflow. On phones, a sticky Call | Book bar appears after the hero and hides while the form is on screen.
